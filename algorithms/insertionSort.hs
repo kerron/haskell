@@ -1,7 +1,7 @@
 insert x [] = [x]
-insert x (y:ys)
-   | x < y = x : (y:ys)
-   | otherwise = y : insert x ys
+insert x (y : ys)
+  | x < y = x : (y : ys)
+  | otherwise = y : insert x ys
 
 insertionSort :: Ord t => [t] -> [t]
 insertionSort = foldr insert []
