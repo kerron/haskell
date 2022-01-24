@@ -3,8 +3,7 @@
 -- This version is also not in-place (as defined in original paper).
 
 qsort [] = []
-qsort (i:xs) = 
-    let 
-        lesser  = filter (\x -> x <= i) xs
-        greater = filter (\x -> x > i) xs
-    in qsort lesser ++ [i] ++ qsort greater 
+qsort (x : xs) = qsort ys ++ [x] ++ qsort zs
+  where
+    ys = [a | a <- xs, a <= x]
+    zs = [b | b <- xs, b > x]
